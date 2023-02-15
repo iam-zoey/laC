@@ -47,16 +47,13 @@ resource "aws_instance" "instance-public" {
   }
 }
 
-resource "null_resource" "grafana_update" {
-  count = var.main_instance_count
-  provisioner "remote-exec" {
-    inline = ["sudo apt upgrade -y grafana && touch upgrade.log && echo 'I updated Grafana' >> upgrade.log"]
-
-    connection {
-      type        = "ssh"
-      user        = "ubuntu"
-      private_key = file(var.key_name)
-      host        = aws_instance.instance-public[count.index].public_ip
-    }
+resource "null_resource" "grafana_install" {
+  depends_on = [aws_instance.instance-public]
+  provisioner "local-exec" {
+    command = "ansible-playbook -i aws_hosts --key-file /home/ubuntu/.ssh/zoey_key /home/ubuntu/terraform/playbooks/grafana.yml"
   }
+}
+
+output "instance_ips" {
+  value = { for i in aws_instance.instance-public[*] : i.tags.Name => "${i.public_ip}:3000" }
 }
