@@ -1,7 +1,8 @@
-## Infrastructure As Code with Terraform and Ansible 
-<img src="https://github.com/iam-zoey/laC/assets/67743970/1fd189b0-2894-411f-a717-1f5e81b06f02" align="left">
+# Infrastructure As Code with Terraform and Ansible 
+<img src="https://github.com/iam-zoey/laC/assets/67743970/1fd189b0-2894-411f-a717-1f5e81b06f02" align="center">
+<br></br>
 
-### Terraform
+## Terraform
 Use the following command to deploy your infrastructure defined in Terraform configurations:
 ```bash
 terraform apply 
@@ -10,9 +11,9 @@ Use the following command to clean up your environment:
 ```bash
 terraform destroy
 ```
+<br></br>
 
-
-### Ansible
+## Ansible
 
 ```bash
 ansible-playbook -i <AWS_HOSTS_FILE> --private-key <KEY_NAME> <PLAYBOOK_NAME>
