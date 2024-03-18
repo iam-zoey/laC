@@ -1,5 +1,5 @@
 ## Infrastructure As Code with Terraform and Ansible 
-<img src="https://github.com/iam-zoey/iam-zoey/assets/67743970/3a53437f-e342-49cd-a34b-00358e52fe47" align="left">
+<img src="https://github.com/iam-zoey/iam-zoey/assets/67743970/936d7353-86f3-479e-acfa-f0a5c50bc94" align="left">
 
 ### Terraform
 Use the following command to deploy your infrastructure defined in Terraform configurations:
